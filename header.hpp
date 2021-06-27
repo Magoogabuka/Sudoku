@@ -47,7 +47,6 @@ int Game::numberChosen()
 
   do
   {
-
       int row = playerChoiceRow();
       int column = playerChoiceColumn();
 
@@ -62,7 +61,15 @@ int Game::numberChosen()
             if((checkColumn(column, choice) == false) && (checkRow(row, choice) == false))
             {
               sudokuBoardOne[row-1][column-1] = choice;
-              tryAgain = false;
+              updateBoard();
+              if(checkEndOfGame() == true)
+              {
+                tryAgain = true;
+              }
+              else
+              {
+                tryAgain = false;
+              }
             }
           }
           else
@@ -263,12 +270,13 @@ void Game::playGame()
 
   do
   {
+    drawBoard();
     numberChosen();
-    updateBoard();
+    //updateBoard();
 
     cout<<"Would you like to play again?\n(Y). yes\n(N). no\nenter choice: ";
     cin>>choice;
-    if(choice == 'Y' ||  choice == 'N')
+    if(choice == 'Y' ||  choice == 'y')
     {
       playAgain = true;
     }
@@ -279,7 +287,6 @@ void Game::playGame()
     }
 
   } while (playAgain == true);
-
 
 }
 
@@ -307,4 +314,21 @@ bool Game::checkGrids(int row, int column, int num)
     }
   }
   return false;
+}
+
+bool Game::checkEndOfGame()
+{
+   for(int i = 0; i<9; i++)
+    {
+      for(int j = 0; j<9; j++)
+       {
+          if(sudokuBoardOne[i][j] == 0)
+          {
+             return true;
+          }
+                  
+        }
+    }
+
+    return false;
 }
