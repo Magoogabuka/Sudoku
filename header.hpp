@@ -276,6 +276,8 @@ void Game::playGame()
 
     cout<<"Would you like to play again?\n(Y). yes\n(N). no\nenter choice: ";
     cin>>choice;
+    clearMatrix();
+      
     if(choice == 'Y' ||  choice == 'y')
     {
       playAgain = true;
@@ -331,4 +333,37 @@ bool Game::checkEndOfGame()
     }
 
     return false;
+}
+
+void Game::clearMatrix()
+{
+  system("clear");
+  
+  int tmpArray[boardSize][boardSize] = {
+                {6,0,8,4,1,9,7,0,5},
+                {0,0,0,7,2,6,1,8,3},
+                {2,1,7,3,5,8,9,0,6},
+                {8,6,3,5,7,1,2,9,4},
+                {4,5,1,9,8,2,3,6,7},
+                {7,2,9,6,4,3,8,5,1},
+                {5,9,6,2,3,7,4,1,8},
+                {1,7,4,8,9,5,6,3,2},
+                {3,8,2,1,6,4,5,7,0},
+          };
+
+  for(int i = 0; i<9; i++)
+  {
+    for(int j = 0; j<9; j++)
+    {
+      sudokuBoardOne[i][j] = 0;
+    }
+  }
+
+  for(int i = 0; i<9; i++)
+  {
+    for(int j = 0; j<9; j++)
+    {
+      sudokuBoardOne[i][j] = tmpArray[i][j];
+    }
+  }
 }
