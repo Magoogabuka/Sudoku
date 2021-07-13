@@ -25,8 +25,8 @@ class Game
     void drawBoard();
     void updateBoard(){system("clear"); drawBoard();};
     void playGame();
-    void checkThreeGrid(int array[boardSize][boardSize], int row, int column);
-    void clearBoard();
+    void clearMatrix();
+   
 
     //bool emptyRowCol();
     bool checkTopGrids(int row, int column, int num);
