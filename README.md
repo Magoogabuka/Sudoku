@@ -9,7 +9,7 @@ has been written on a macOS using VScode. <br />
 ## EXAMPLE PHOTO ONE
 ![Snip20210720_1](https://user-images.githubusercontent.com/82743027/126285084-b4d39286-6828-44c6-92d4-7e2e2b1c4123.png)
 <br />This is how it appears in the terminal.
-You enter a row and then it asks for a column as well, then you enter a number for that position<br />
+You enter a row and then it asks for a column as well, then you enter a number for that position, 0 represents an open space to put a number<br />
 ## EXAMPLE PHOTO TWO
 ![Snip20210720_2](https://user-images.githubusercontent.com/82743027/126285207-8a50d832-d112-48ad-93fb-c460857e35fc.png)
 <br />You then just play the game as normal. It will make sure that each row, column and each grid you choose will not <br />
