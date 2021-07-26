@@ -265,9 +265,7 @@ void Game::playGame()
 {
   bool playAgain = true;
   char choice;
-
-  drawBoard();
-
+    
   do
   {
     drawBoard();
