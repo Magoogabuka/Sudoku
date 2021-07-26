@@ -42,6 +42,5 @@ class Game
     int playerChoiceColumn();
     int numberChosen();
   
-  private://8, row 1, column 3
-
+    char menuScreen();
 };
