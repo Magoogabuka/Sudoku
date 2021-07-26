@@ -93,7 +93,6 @@ bool Game::checkTopGrids(int row, int column, int num)
 {
   if((row > 0 && row<=3) && column <=3)
   {
-    cout<<"you are in the first grid\n";
     for(int r = 0; r<3; r++)
     {
       for(int c = 0; c<3; c++)
@@ -107,7 +106,6 @@ bool Game::checkTopGrids(int row, int column, int num)
   }
   else if((row > 0 && row<=3) && (column > 3 && column <=6))
   {
-    cout<<"you are in the second grid\n";
     for(int r = 0; r<3; r++)
     {
       for(int c = 3; c<6; c++)
@@ -121,7 +119,6 @@ bool Game::checkTopGrids(int row, int column, int num)
   }
   else if((row > 0 && row<=3) && (column > 6 && column <=9))
   {
-    cout<<"you are in the third grid\n";
     for(int r = 0; r<3; r++)
     {
       for(int c = 6; c<9; c++)
@@ -141,7 +138,6 @@ bool Game::checkMiddleGrids(int row, int column, int num)
 {
     if((row > 3 && row<=6) && column <=3)
   {
-    cout<<"you are in the first grid\n";
     for(int r = 3; r<6; r++)
     {
       for(int c = 0; c<3; c++)
@@ -155,7 +151,6 @@ bool Game::checkMiddleGrids(int row, int column, int num)
   }
   else if((row > 3 && row<=6) && (column > 3 && column <=6))
   {
-    cout<<"you are in the second grid\n";
     for(int r = 3; r<6; r++)
     {
       for(int c = 3; c<6; c++)
@@ -169,7 +164,6 @@ bool Game::checkMiddleGrids(int row, int column, int num)
   }
   else if((row > 3 && row<=6) && (column > 6 && column <=9))
   {
-    cout<<"you are in the third grid\n";
     for(int r = 3; r<6; r++)
     {
       for(int c = 6; c<9; c++)
@@ -190,7 +184,6 @@ bool Game::checkBottomGrids(int row, int column, int num)
 {
    if((row > 6 && row<=9) && column <=3)
   {
-    cout<<"you are in the first grid\n";
     for(int r = 6; r<9; r++)
     {
       for(int c = 0; c<3; c++)
@@ -204,7 +197,6 @@ bool Game::checkBottomGrids(int row, int column, int num)
   }
   else if((row > 6 && row<=9) && (column > 3 && column <=6))
   {
-    cout<<"you are in the second grid\n";
     for(int r = 6; r<9; r++)
     {
       for(int c = 3; c<6; c++)
@@ -218,7 +210,6 @@ bool Game::checkBottomGrids(int row, int column, int num)
   }
   else if((row > 6 && row<=9) && (column > 6 && column <=9))
   {
-    cout<<"you are in the third grid\n";
     for(int r = 6; r<9; r++)
     {
       for(int c = 6; c<9; c++)
@@ -265,9 +256,10 @@ void Game::playGame()
 {
   bool playAgain = true;
   char choice;
-    
+
   do
   {
+    //drawBoard();
     drawBoard();
     numberChosen();
     //updateBoard();
@@ -364,4 +356,31 @@ void Game::clearMatrix()
       sudokuBoardOne[i][j] = tmpArray[i][j];
     }
   }
+}
+
+char Game::menuScreen()
+{
+    char choice;
+    cout<<"-------Sudoku-------\n";
+    sleep(1);
+    cout<<" Brought to you by\n\n";
+    sleep(2);
+    system("clear");
+    cout<<"-----Eva Terminal Games------\n\n";
+    sleep(1);
+    cout<<
+    "   ######################\n"
+    "   #                    #\n"
+    "   #                    #\n"
+    "   # P. to play game    #\n"
+    "   # Q. to quit game    #\n"
+    "   # I. Instructions    #\n"
+    "   #                    #\n"
+    "   ######################\n";
+    cout<<"\nEnter choice: ";
+    cin>>choice;
+    
+    system("clear");
+    return choice;
+
 }
